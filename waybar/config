@@ -1,0 +1,95 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "margin": "5 5 5 5",
+    "modules-left": ["hyprland/workspaces", "custom/media"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["cpu", "temperature", "memory", "gpu", "backlight", "pulseaudio", "clock", "tray", "battery"],
+    
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "sort-by-number": true
+    },
+
+    "hyprland/window": {
+        "format": "{title}",
+        "empty-format": "\n"
+    },
+
+    "clock": {
+        "format": " {:%H:%M %p}",
+        "format-alt": " {:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'>{}</span>",
+                "weekdays": "<span color='#ffcc66'>{}</span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    
+    "cpu": {
+        "format": "\udb80\udf5b {usage}%",
+        "tooltip": true,
+        "interval": 1
+    },
+    
+    "memory": {
+        "format": "\uefc5 {percentage}%",
+        "interval": 1
+    },
+    
+    "temperature": {
+        "format": "\uf2c9 {temperatureC}°C",
+        "critical-threshold": 60,
+        "tooltip": true
+    },
+    
+    "backlight": {
+        "format": "\udb80\udce0 {percent}%",
+        "on-scroll-up": "light -A 1",
+        "on-scroll-down": "light -U 1"
+    },
+    
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%",
+        "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%"
+    },
+    
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    },
+
+    "battery": {
+        "format": "\udb80\udc79 {capacity}%",
+        "format-charging": "\udb80\udc84 {capacity}%",
+        "format-plugged": "\udb85\udfe2 {capacity}%",
+        "format-full": "\udb84\ude0f {capacity}%",
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "bat": "BAT0",
+        "interval": 10
+    }
+
+
+}
