@@ -13,12 +13,10 @@
     "sort-by-number": true
   },
 
-  "hyprland/window": {
-    "class": "windowarea",
-    "format": "{title}",
-    "empty-format": "",
-   "max-length": 25
-  },
+"hyprland/window": {
+  "format": "{}",
+  "tooltip": false
+},
 
   "custom/powermenu": {
   "format": " ⏻ ",

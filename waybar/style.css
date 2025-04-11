@@ -105,20 +105,24 @@ window#waybar {
     margin: 0;
 }
 
+
 #window {
-    margin: 4px 4px;
-    border-radius: 10px;
-    background-color: rgba(49, 50, 68, 0.7);
-    border: 2px solid #565f89;
-    color: #cdd6f4;
-    padding: 5px 10px;
+     margin: 4px 4px;
+     border-radius: 10px;
+     background-color: rgba(49, 50, 68, 0.7);
+     border: 2px solid #565f89;
+     color: #cdd6f4;
+     padding: 5px 10px;
 }
 
-#window.empty {
+window#waybar.empty #window {
     background-color: transparent;
+    border: none;
     color: transparent;
-    border-color: transparent;
-}
+    padding: 0;
+    margin: 0;
+  }
+  
 
 #mpris {
     padding: 2px 10px;
